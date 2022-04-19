@@ -1,5 +1,8 @@
 #schedule {
-  display: flex;
   width: 45%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--background-primary);
 }

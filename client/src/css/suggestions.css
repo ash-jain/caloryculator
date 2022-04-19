@@ -1,4 +1,8 @@
 #suggestions {
-  height: 100%;
   width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--background-primary);
 }

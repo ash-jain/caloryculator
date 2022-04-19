@@ -1,37 +1,65 @@
-:root {
-    --foreground-primary: #000000;
-    --foreground-secondary: #a5a5a5;
-    --background-primary: #f5f5f5;
-    --background-secondary: #ffffffaa;
-    --accent-1: ;
-    --accent-2: ;
+@font-face {
+  font-family: 'Brandon Grotesque';
+  src: url('./fonts/brandon-grotesque.woff') format('woff'),
+      url('./fonts/brandon-grotesque.ttf') format('truetype');
+  font-weight: 900;
+  font-display: swap; }
+@font-face {
+  font-family: 'Poppins';
+  src: url('./fonts/poppins.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Raleway';
+  src: url('./fonts/raleway.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./fonts/montserrat.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+}
 
-    --regular-font-primary: ;
-    --regular-font-secondary: ;
-    --title-font-secondary: ;
-    --title-font-secondary: ;
+
+:root {
+  --foreground-primary: #000000;
+  --foreground-secondary: #a5a5a5;
+  --background-primary: #fbe9d599;
+  --background-secondary: #ffffffaa;
+  --accent-1: ;
+  --accent-2: ;
+
+  --regular-font-primary: 'Raleway', sans-serif;
+  --regular-font-secondary: 'Montserrat', monospace;
+  --title-font-primary: 'Brandon Grotesque', sans-serif;
+  --title-font-secondary: '', sans-serif;
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    max-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--regular-font-primary);
 }
 
 .dashboard {
-    height: 95vh;
-    width: 100%;
-    padding: 5vh 2.5vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2.5vw;
+  height: 95vh;
+  width: 100%;
+  padding: 5vh 2.5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5vw;
+  background-color: var(--background-secondary);
 }
 
 
