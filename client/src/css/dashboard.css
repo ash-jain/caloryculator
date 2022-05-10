@@ -1,0 +1,20 @@
+.dashboard {
+    height: 95vh;
+    width: 100%;
+    padding: 5vh 2.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5vw;
+    background-color: var(--background-secondary);
+}
+
+.dashboard > div {
+    box-shadow: 0px 0px 15px -5px rgba(0,0,0,0.75);
+}
+
+@media (orientation: portrait) {
+    .dashboard {
+        flex-direction: column;
+    }
+}

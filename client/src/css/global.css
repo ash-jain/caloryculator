@@ -3,7 +3,14 @@
   src: url('./fonts/brandon-grotesque.woff') format('woff'),
       url('./fonts/brandon-grotesque.ttf') format('truetype');
   font-weight: 900;
-  font-display: swap; }
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Abril Fatface';
+  src: url('./fonts/abril-fatface.ttf') format('truetype');
+  font-weight: 900;
+  font-display: swap;
+}
 @font-face {
   font-family: 'Poppins';
   src: url('./fonts/poppins.ttf') format('truetype');
@@ -35,7 +42,7 @@
   --regular-font-primary: 'Raleway', sans-serif;
   --regular-font-secondary: 'Montserrat', monospace;
   --title-font-primary: 'Brandon Grotesque', sans-serif;
-  --title-font-secondary: '', sans-serif;
+  --title-font-secondary: 'Abril Fatface', sans-serif;
 }
 
 * {
@@ -49,20 +56,5 @@ body {
   display: flex;
   flex-direction: column;
   font-family: var(--regular-font-primary);
-}
-
-.dashboard {
-  height: 95vh;
-  width: 100%;
-  padding: 5vh 2.5vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2.5vw;
-  background-color: var(--background-secondary);
-}
-
-
-.navbar, .dashboard * {
-    border: 2px solid black;
+  overflow-y: hidden;
 }
