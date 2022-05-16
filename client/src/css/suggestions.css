@@ -5,52 +5,69 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: auto;
   background-color: var(--background-primary);
 }
 
-.suggestions-title {
-  font-size: 1.25rem;
-  font-family: var(--title-font-primary);
-}
+  .suggestions-title {
+    font-size: 1.25rem;
+    font-family: var(--title-font-primary);
+  }
 
-.suggestions-practices {
-  height: 25%;
-  display: flex;
-  align-items: center;
-  gap: 10px; 
-}
+  .suggestions-practices {
+    height: 25%;
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+  }
 
-.suggestions-practices-btn {
-  display: inline;
-  padding: 5px 10px;
-  font-family: var(--title-font-primary);
-  border: 0.75px solid var(--foreground-primary);
-  cursor: pointer;
-  border-radius: 3rem;
-}
-.suggestions-practices-btn:focus {
-  color: white;
-  background-color: var(--foreground-primary);
-}
+    .suggestions-practices-btn {
+      display: inline;
+      padding: 5px 10px;
+      font-family: var(--title-font-primary);
+      border: 0.75px solid var(--foreground-primary);
+      cursor: pointer;
+      border-radius: 3rem;
+    }
+    .suggestions-practices-btn:focus {
+      color: white;
+      background-color: var(--foreground-primary);
+    }
 
-.suggestions-menu {
-  height: 75%;
-  width: 80%;
-  padding: 2.5vh 0vw;
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-  gap: 10px;
-  flex-wrap: wrap;
-  border-top: 2px solid var(--foreground-primary);
-}
+  .suggestions-menu {
+    height: 75%;
+    width: 80%;
+    padding: 2.5vh 0vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 15px 5px;
+    flex-wrap: wrap;
+    border-top: 2px solid var(--foreground-primary);
+  }
 
-.suggestions-menu-cmp {
-  display: inline;
-  font-family: var(--regular-font-secondary);
-  font-size: 0.85rem;
-  padding: 5px 7.5px;
-  cursor: pointer;
-  border: 0.5px solid var(--foreground-primary);
-  border-radius: 3em;
+  .suggestions-menu-item {
+    display: inline;
+    font-family: var(--regular-font-secondary);
+    font-size: 0.85rem;
+    padding: 5px 7.5px;
+    cursor: pointer;
+    border: 0.5px solid var(--foreground-primary);
+    border-radius: 3em;
+    transition: all 0.25s linear;
+  }
+  .suggestions-menu-item:hover {
+    transform: scale(1.1);
+  }
+
+
+@media (orientation: portrait) {
+  #suggestions {
+    width: 95%;
+    padding: 0 2.5%;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+  }
 }

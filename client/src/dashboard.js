@@ -11,7 +11,7 @@ function Dashboard() {
   const [isWorkoutsLoaded, setWorkoutLoaded] = useState(false);
   const [errorLoadingWorkouts, setErrorLoadingWorkouts] = useState(false);
 
-  const [schedule, setSchedule] = useState([]);
+  const [schedule, setSchedule] = useState({});
 
   useEffect(() => {
     fetch(`${process.env.REACT_APP_SERVER_URL}/workouts/`)
@@ -32,7 +32,7 @@ function Dashboard() {
     <div className='dashboard'>
       <Statistics schedule={schedule} />
       <Schedule schedule={schedule} setSchedule={setSchedule} />
-      <Suggestions schedule={schedule} setSchedule={setSchedule} workouts={workouts} isWorkoutsLoaded={isWorkoutsLoaded} errorLoadingWorkouts={errorLoadingWorkouts}/>
+      <Suggestions schedule={schedule} setSchedule={setSchedule} workouts={workouts} isWorkoutsLoaded={isWorkoutsLoaded} />
   </div>
   );
 }
