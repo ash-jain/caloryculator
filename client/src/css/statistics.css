@@ -1,26 +1,83 @@
 #statistics {
-  width: 25%;
+  width: 30%;
   height: 100%;
-  padding: 2.5vh 1vw;
+  padding: 2.5vh 0.5vw;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: space-between;
+  gap: 5vh;
   background-color: var(--background-primary);
 }
 
-.statistics-title {
-  font-size: 1.25rem;
-  font-family: var(--title-font-primary);
-}
+  .statistics-input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 10px;
+  }
 
-.statistics-input {
-  height: 35%;
-  width: 80%;
-  padding: 5vh 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  border-top: 2px solid var(--foreground-primary)
+    .statistics-container-title {
+      font-family: var(--title-font-primary);
+      font-size: 1.25rem;
+      text-align: left;
+    }
+
+    .statistics-input-container > span {
+      width: 100%;
+      height: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 5px;
+    }
+
+    .statistics-input-container label {
+      font-family: var(--regular-font-secondary);
+    }
+
+    .statistics-input-gender-icons-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+      .statistics-input-gender-icon {
+        padding: 2px 2px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1.5rem;
+        cursor: pointer;
+        border: 2px solid black;
+        border-radius: 50%;
+      }
+      #statistics-input-gender-icon-activated {
+        color: white;
+        background: var(--accent-2);
+        border-color: white;
+      }
+
+  .statistics-calorymeter {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+    .statistics-calorymeter > span {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+
+@media (orientation: portrait) {
+  #statistics {
+    width: 95%;
+    padding: 0 2.5%;
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+  }
 }

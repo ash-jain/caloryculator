@@ -37,7 +37,7 @@
   --background-primary: #fbe9d599;
   --background-secondary: #ffffffaa;
   --accent-1: ;
-  --accent-2: ;
+  --accent-2: linear-gradient(to bottom right, #a02be4, #7c3aed, #4f46e5);
 
   --regular-font-primary: 'Raleway', sans-serif;
   --regular-font-secondary: 'Montserrat', monospace;
@@ -52,9 +52,14 @@
 }
 
 body {
-  max-height: 100vh;
   display: flex;
   flex-direction: column;
   font-family: var(--regular-font-primary);
   overflow-y: hidden;
+}
+
+@media (orientation: portrait) {
+  body {
+    overflow-y: initial;
+  }
 }

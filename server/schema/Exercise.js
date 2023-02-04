@@ -7,7 +7,7 @@ const exerciseSchema = new mongoose.Schema({
     "MET": String,
     "measure": String,
     "default-value": String,
-    "target": {
+    "focus": {
         "primary": [String],
         "secondary": [String],
     }
@@ -15,4 +15,4 @@ const exerciseSchema = new mongoose.Schema({
 
 const Exercise = mongoose.model("Exercise", exerciseSchema);
 
-module.export = { Exercise, exerciseSchema };
+export { Exercise, exerciseSchema };

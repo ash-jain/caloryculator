@@ -1,1 +1,1 @@
-# Workout Management App.
+# Caloryculator - A workout designing and calory tracking application.

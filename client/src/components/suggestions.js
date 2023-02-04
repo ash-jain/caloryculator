@@ -15,8 +15,10 @@ function Suggestions(props) {
   const practices = ['calisthenics', 'strength-training', 'cardio'];
 
   const addWorkout = (workout) => {
-    if (!props.schedule.includes(workout)) {
-      props.setSchedule(props.schedule.concat(workout));
+    if (!(workout._id in props.schedule)) {
+      props.setSchedule({...props.schedule, [workout._id] : {
+        ...workout, amount: parseInt(workout['amount'].split(' ')[0])
+      } });
     }
   }
 
@@ -36,7 +38,7 @@ function Suggestions(props) {
       <div className='suggestions-title'>Suggestions</div>
 
       <div className="suggestions-practices">
-      { 
+      {
         practices.map( (practice, index) => 
           <button className='suggestions-practices-btn' onClick={ () => filterPractice(practice) } key={ index }>
             { formatString(practice) }
@@ -47,7 +49,7 @@ function Suggestions(props) {
       <div className="suggestions-menu">
       { props.isWorkoutsLoaded && 
         suggestions.map( item => 
-          <span className='suggestions-menu-cmp' onClick={ () => addWorkout(item) } key={ item.id } >
+          <span className='suggestions-menu-item' onClick={ () => addWorkout(item) } key={ item.id } >
             { formatString(item.title) }
           </span> )
       }

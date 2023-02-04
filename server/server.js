@@ -12,9 +12,9 @@ dotenv.config();
 const app = express();
 
 mongoose.connect(`${process.env.DB_URL}`,
-() => console.log('Connected to the database'),
+() => console.log('Connected to the database. ✅'),
 (e) => console.log(e));
-models = { User, Exercise };
+const models = { User, Exercise };
 
 app.use(morgan('tiny'));
 app.use(cors({ origin: 'https:/localhost' }));
@@ -38,5 +38,5 @@ app.post('/save', (req, res) => {
 });
 
 app.listen(process.env.PORT, () => {
-  console.log(`Listening on port ${process.env.PORT}...`);
+  console.log(`Listening on port ${process.env.PORT}. 👂`);
 });
