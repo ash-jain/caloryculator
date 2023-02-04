@@ -1,42 +1,42 @@
-const express = require('express');
+import dotenv from 'dotenv';
+import express from 'express';
+import mongoose from 'mongoose';
+import cors from 'cors';
+import morgan from 'morgan';
+
+import { User } from './schema/User.js';
+import { Exercise } from './schema/Exercise.js';
+
+dotenv.config();
+
 const app = express();
 
-const config = require('dotenv').config();
+mongoose.connect(`${process.env.DB_URL}`,
+() => console.log('Connected to the database'),
+(e) => console.log(e));
+models = { User, Exercise };
 
-const mongoose = require('mongoose');
-const db = mongoose.connect(`${process.env.DB_URL}`);
-const models = require('./schema.js');
+app.use(morgan('tiny'));
+app.use(cors({ origin: 'https:/localhost' }));
 
-// TODO: Authentication logic.
-
-const logger = require('morgan');
-const cors = require('cors');
-
-
-app.use(logger('tiny'));
-app.use(cors({'origin': 'https:/localhost'}));
-
+// TODO: Authentication.
 
 // TODO: Serve react.
 app.get('/', (req, res) => {
-    res.send('Under construction 🏗...');
+  res.send('Under construction 🏗...');
 });
 
 app.get('/workouts', cors(), (req, res) => {
-    models.Exercise.find({}, (err, data) => {
-        if (err)
-            console.log(err)
-        else
-            return res.json(data);
-    });
+  models.Exercise.find({}, (err, data) => {
+    if (err) console.log(err);
+    else return res.json(data);
+  });
 });
 
 // TODO: Implement data saving option.
 app.post('/save', (req, res) => {
-
 });
 
-
 app.listen(process.env.PORT, () => {
-    console.log(`Listening on port ${process.env.PORT}...`);
+  console.log(`Listening on port ${process.env.PORT}...`);
 });

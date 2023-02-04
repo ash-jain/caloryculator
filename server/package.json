@@ -2,6 +2,7 @@
   "name": "server",
   "version": "1.0.0",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npx nodemon server.js"
@@ -17,7 +18,8 @@
   "devDependencies": {
     "cors": "^2.8.5",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "prettier": "2.8.1"
   },
   "description": ""
 }
