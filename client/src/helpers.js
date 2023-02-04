@@ -4,4 +4,4 @@ const formatString = string => {
     .join(' ');
 }
 
-module.exports = formatString;
+module.exports = { formatString };
