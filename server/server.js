@@ -3,9 +3,13 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import morgan from 'morgan';
+import path from 'path';
 
 import { User } from './schema/User.js';
 import { Exercise } from './schema/Exercise.js';
+
+import { fileURLToPath } from 'url';
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 dotenv.config();
 
@@ -17,13 +21,14 @@ mongoose.connect(`${process.env.DB_URL}`,
 const models = { User, Exercise };
 
 app.use(morgan('tiny'));
+app.use(express.static(path.join(__dirname, 'build')));
 app.use(cors({ origin: 'https:/localhost' }));
 
 // TODO: Authentication.
 
 // TODO: Serve react.
 app.get('/', (req, res) => {
-  res.send('Under construction 🏗...');
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 app.get('/workouts', cors(), (req, res) => {
@@ -35,6 +40,11 @@ app.get('/workouts', cors(), (req, res) => {
 
 // TODO: Implement data saving option.
 app.post('/save', (req, res) => {
+});
+
+app.get('*', (req, res) => {
+  res.status(404);
+  res.send("<h1>404 Not Found</h1>");
 });
 
 app.listen(process.env.PORT, () => {

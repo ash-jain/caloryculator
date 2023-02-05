@@ -6,7 +6,7 @@ const exerciseSchema = new mongoose.Schema({
     "practice": String,
     "MET": String,
     "measure": String,
-    "default-value": String,
+    "default": String,
     "focus": {
         "primary": [String],
         "secondary": [String],
